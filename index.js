@@ -1,14 +1,18 @@
 const express = require('express')
-const flight = require("./api/flight")
+require('dotenv').config();
+
+const booking = require("./routers/booking")
+const flight = require("./routers/flight")
+const ticket = require("./routers/ticket")
+const user = require("./routers/user")
 
 const app = express()
-const port = 3000
+const port = process.env.PORT
 
+app.use("/api/booking", booking);
 app.use("/api/flight", flight);
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use("/api/ticket", ticket);
+app.use("/api/user", user);
 
 app.get('/ping', (req, res) => {
   res.send('pong')
