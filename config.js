@@ -22,13 +22,13 @@ const {
 } = process.env
 
 
-assert(PORT, 'PORT is required')
-assert(HOST, 'HOST required')
-
+// assert(PORT, 'PORT is required')
+// assert(HOST, 'HOST required')
+// port: PORT,
+// host: HOST,
+// url: HOST_URL,
 module.exports = {
-    port: PORT,
-    host: HOST,
-    url: HOST_URL,
+
     firebaseConfig: {
         "type": TYPE,
         "project_id": PROJECT_ID,
