@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 
 app.use('/api', userRoutes.routes)
 
-app.listen(config.port, () => console.log("app listening on localhost"+ config.port))
+// app.listen(config.port, () => console.log("app listening on localhost"+ config.port))
 
 app.get('/ping', (req, res) => {
   res.send('pong')
