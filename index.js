@@ -1,23 +1,21 @@
-const express = require('express')
-require('dotenv').config();
+'use strict';
 
-const booking = require("./routers/booking")
-const flight = require("./routers/flight")
-const ticket = require("./routers/ticket")
-const user = require("./routers/user")
+const express = require('express')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const config = require('./config')
+const userRoutes = require('./routes/user-routes')
 
 const app = express()
-const port = process.env.PORT
 
-app.use("/api/booking", booking);
-app.use("/api/flight", flight);
-app.use("/api/ticket", ticket);
-app.use("/api/user", user);
+app.use(express.json())
+app.use(cors())
+app.use(bodyParser.json())
+
+app.use('/api', userRoutes.routes)
+
+app.listen(config.port, () => console.log("app listening on localhost"+ config.port))
 
 app.get('/ping', (req, res) => {
   res.send('pong')
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
 })
