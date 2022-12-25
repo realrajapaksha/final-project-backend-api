@@ -8,7 +8,7 @@ const addUser = async (req, res) => {
         const data = req.body
         console.log(data)
         await firestore.collection('users').doc().set(data)
-        res.send("Save complete")
+        res.status(200).send("Save complete")
     } catch (error) {
         res.status(400).send(error.message)
     }
@@ -33,11 +33,11 @@ const getUser = async (req, res) => {
     }
 }
 
-const getAllUser = async (res) => {
+const getAllUser = async (req, res) => {
     try {
         const users = await firestore.collection('users').get()
         const usersArray = []
-        if (data.empty) {
+        if (users.empty) {
             res.status(404).send("no user found")
         } else {
             users.forEach(doc => {
