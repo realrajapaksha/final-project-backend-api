@@ -6,8 +6,7 @@ const User = require('../models/User')
 const addUser = async (req, res) => {
     try {
         const data = req.body
-        console.log(data)
-        await firestore.collection('users').doc().set(data)
+        await firestore.collection('users').doc(data.id).set(data)
         res.status(200).send("Save complete")
     } catch (error) {
         res.status(400).send(error.message)
@@ -58,8 +57,7 @@ const getAllUser = async (req, res) => {
 const updateUser = async (req, res) => {
     try {
         const data = req.body
-        const id = req.body.id
-        await firestore.collection('users').doc(id).update(data)
+        await firestore.collection('users').doc(data.id).update(data)
         res.status(200).send("Update complete")
     } catch (error) {
         res.status(400).send(error.message)
