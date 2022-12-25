@@ -4,7 +4,7 @@ const config = require('./config')
 const servicefile = require('./service-account-file.json')
 
 initializeApp({
-    credential: cert(servicefile)
+    credential: cert(config.firebaseConfig)
 });
 
 const firestore = getFirestore();

@@ -10,7 +10,6 @@ const {
     TYPE,
     PROJECT_ID,
     PRIVATE_KEY_ID,
-    PRIVATE_KEY,
     CLIENT_EMAIL,
     CLIENT_ID,
     AUTH_URI,
@@ -19,8 +18,11 @@ const {
     CLIENT_X509_CERT_URL
 } = process.env
 
+const { privateKey } = JSON.parse(process.env.PRIVATE_KEY || '{ privateKey: null }')
 
 assert(PORT, 'PORT is required')
+
+//PRIVATE_KEY.replace(/\\n/g, '\n')
 
 module.exports = {
     port: PORT,
@@ -28,7 +30,7 @@ module.exports = {
         "type": TYPE,
         "project_id": PROJECT_ID,
         "private_key_id": PRIVATE_KEY_ID,
-        "private_key": PRIVATE_KEY.replace(/\\n/g, '\n'),
+        "private_key": privateKey,
         "client_email": CLIENT_EMAIL,
         "client_id": CLIENT_ID,
         "auth_uri": AUTH_URI,
