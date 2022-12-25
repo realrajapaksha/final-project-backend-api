@@ -19,13 +19,14 @@ const {
 } = process.env
 
 const { privateKey } = JSON.parse(process.env.PRIVATE_KEY || '{ privateKey: null }')
-
+const fireVercal = process.env.FIREBASE_CONFIG;
 assert(PORT, 'PORT is required')
 
 //PRIVATE_KEY.replace(/\\n/g, '\n')
 
 module.exports = {
     port: PORT,
+    FfirebaseOnVercal: fireVercal,
     firebaseConfig: {
         "type": TYPE,
         "project_id": PROJECT_ID,
