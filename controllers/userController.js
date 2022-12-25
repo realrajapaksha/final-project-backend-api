@@ -3,7 +3,7 @@
 const firestore = require('../db')
 const User = require('../models/User')
 
-const addUser = async (req, res, next) => {
+const addUser = async (req, res) => {
     try {
         const data = req.body
         console.log(data)
@@ -14,19 +14,33 @@ const addUser = async (req, res, next) => {
     }
 }
 
-const getUser = async (req, res, next) => {
-
+const getUser = async (req, res) => {
+    try {
+        const id = req.body.id
+        const user = await firestore.doc('users/' + id).get()
+        if (!user.exists) {
+            res.status(404).send("no user found")
+        } else {
+            const u = new User(
+                user.id,
+                user.data().firstName,
+                user.data().lastName
+            )
+            res.status(200).send(u)
+        }
+    } catch (error) {
+        res.status(404).send(error.message)
+    }
 }
 
-const getAllUser = async (req, res, next) => {
+const getAllUser = async (res) => {
     try {
-        const users = await firestore.collection('users')
-        const data = await users.get()
+        const users = await firestore.collection('users').get()
         const usersArray = []
         if (data.empty) {
             res.status(404).send("no user found")
         } else {
-            data.forEach(doc => {
+            users.forEach(doc => {
                 const u = new User(
                     doc.data().id,
                     doc.data().firstName,
@@ -34,21 +48,24 @@ const getAllUser = async (req, res, next) => {
                 )
                 usersArray.push(u)
             })
-            res.send(usersArray)
+            res.status(200).send(usersArray)
         }
     } catch (error) {
         res.status(404).send(error.message)
     }
 }
 
-const updateUser = async () => {
-
-}
-
-const deleteUser = async (req, res, next) => {
-
+const updateUser = async (req, res) => {
+    try {
+        const data = req.body
+        const id = req.body.id
+        await firestore.collection('users').doc(id).update(data)
+        res.status(200).send("Update complete")
+    } catch (error) {
+        res.status(400).send(error.message)
+    }
 }
 
 module.exports = {
-    addUser, getUser, getAllUser, updateUser, deleteUser
+    addUser, getUser, getAllUser, updateUser
 }
