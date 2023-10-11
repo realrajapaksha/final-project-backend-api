@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "nanotek-esoft",
+  "private_key_id": "61eeff78cc77fd2cba19a8cb18b32651edf28e95",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDlFurJF3owyeYZ\nJgC5nlR10mV92x0RGG7SJuKXW8GHcbAfocaaCwQtbtXIRGJJz+kCh69dNYKlwOkt\nExaoNbyRbzGb3N0+TRcu4lcrhnDW7oRMMKKgAjEUvXVTNUtemAlQSvTfD8sgs6jP\nLrR/sbcDLHow74yqK0kg9BCBnpiNgOTSuR4IuEz4qPJqPHW64+FmSmmufQpGOdC5\nwd2lFCPPxJIhcl/FPsPjZMvgiJQqLIQ88HEILqdjTUjHntVjqWChiz3dCHWHCpt6\nJFCvbZMa48aEcUSI2369B79ncnGGQEZrKVCg/8cIzeJeOgc517QZN9Gc0DMqgxgS\nzedj7XlDAgMBAAECggEASffW0hwO+37NGTSgik5Zdft7gqIDZhgt/BPLGNTrDVkD\nZYs+DVHeRO8i/rk5xRxo30TBNgbHis5ZW5DswV4sZwbwjSNImkuY3y38uFR9zaAQ\nvmr7r09V2pz7q2SrU70iULcLDpTSYNoxeMfbRtmyPkeXooJOOEmmoIm9ZKS5HAK0\nHFZVT2KfV6dtBrS6EYtXe6XxriVdisL1roY2KgkALOYusJw+iIpt7jT0r9nFZlz5\nqkNQYpMAJx6hokO1/oTkdfZHzRKiieSIkFuanSGSWSHNoeNCNKzLIikFM5Uo2ayg\nxmdyGaX8f8zINAoT8wc7T23wMiqPTzNQUSPzvsjL4QKBgQD8FCnN+4I3kE3PpDQl\nbzodAry82YgL180eW4wlIgUtk/gosXMjPyS/0pw3Fbs5+UwZLT/dH40pq1/FoN+A\nSmAtyf0yMc7GCRayTdCCTFVBl4SyXT2Cjf2ddGEd0nwseJcqfEM1mrizszqNz6e8\nkPnP03cMOBFIQDZzu837npXdowKBgQDopzSNN22XtLixkiQbAzvCdAzI893rsi9/\n6Eqz1US8Jvk1sNTApI2CiVqLhweTtyE6F3me6cgRo7C/Oa02Z0DBInHXiMPRvC8g\nBVPQBgXSH+r4jJjRPg2UKNZafJYPpIRbIHSoCa6jhut+mYRJz73Vew9VhBILGtpv\nvomLFjRv4QKBgGAW95CTbSHtGhwqxc33RjnEz1lVuqx5CLGnyBZnj32+R/yLGA65\nhTKx/+ZnnEUPKNj4DL4nxtG5h/p3xnrK3zrVInU900peMI6rZu4kVuN39JdhP49C\nvQiGUnbhw3/YQBdr4trOLdYiXhGstI4G3ZNBUsIPpVbbU2Zukqh13T7tAoGBAMYy\ng5N2T9e4rssfm8CjbYqHwMiE8F61ir+ljdZL7mV3skBqJ6UBykgVaVyKKQtPLHBH\nxWV69eUJFS6jHQvGxKSECoW6Tk/jyCW4RCFosBbE+DDL3fgLrBe2/n1Ru6kR12um\nZ5srvGo1K3PLpqYW4zr1vid0/sYVF1ew843Y2c0hAoGBAJkZ3l+tufu9DyvhmR+o\nhKbiVxQgDfJ54l6TohkLFu2ZotAiwhapEugtRGldyJK46mIfTljCkVFDq788Ziya\ntEN6UU7whXCum/Sq6+lRqCVwPpzUH+KJ74PU7TuNsmZYdqyaNrVrk/UTJjM86sK9\n/Kqfz1cwQuNdi6UO9gnMKVsW\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-ra4as@nanotek-esoft.iam.gserviceaccount.com",
+  "client_id": "104049116623596037124",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ra4as%40nanotek-esoft.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

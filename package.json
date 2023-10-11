@@ -1,7 +1,7 @@
 {
-  "name": "flightapi",
+  "name": "computershop",
   "version": "1.0.0",
-  "description": "my flight api",
+  "description": "computer shop backend API",
   "main": "index.js",
   "engines": {
     "node": "16.x"
@@ -11,21 +11,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/realrajapaksha/flightapi.git"
+    "url": "git+https://github.com/realrajapaksha/final-project-computershop-API.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/realrajapaksha/flightapi/issues"
+    "url": "https://github.com/realrajapaksha/final-project-computershop-API/issues"
   },
-  "homepage": "https://github.com/realrajapaksha/flightapi#readme",
+  "homepage": "https://github.com/realrajapaksha/final-project-computershop-API#readme",
   "dependencies": {
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "firebase-admin": "^11.3.0"
+    "firebase": "^10.4.0",
+    "firebase-admin": "^11.11.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
