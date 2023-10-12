@@ -1,13 +1,17 @@
 class User {
-    constructor(id, firstName, lastName){
+    constructor(id, email, fullName, image, age, gender, mobile, telephone, city, province, country, address) {
         this.id = id;
-        this.firstName = firstName
-        this.lastName = lastName
-        // this.age = age;
-        // this.email = email;
-        // this.telephone = telephone;
-        // this.country = country;
-        // this.address = address;
+        this.email = email;
+        this.fullName = fullName;
+        this.image = image;
+        this.age = age;
+        this.gender = gender;
+        this.mobile = mobile;
+        this.telephone = telephone;
+        this.city = city;
+        this.province = province;
+        this.country = country;
+        this.address = address;
     }
 }
 
