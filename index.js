@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const config = require('./config')
 
 const userRoutes = require('./routes/user-routes')
-const ticketRouter = require('./routes/ticket-router');
+const searchRouter = require('./routes/search-router');
 
 const app = express()
 
@@ -15,7 +15,7 @@ app.use(cors())
 app.use(bodyParser.json())
 
 app.use('/api', userRoutes.routes)
-app.use('/api', ticketRouter.routes)
+app.use('/api', searchRouter)
 
 app.listen(config.port, () => console.log("app listening on localhost" + config.port))
 

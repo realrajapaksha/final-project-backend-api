@@ -6,7 +6,7 @@ const User = require('../models/User')
 const addUser = async (req, res) => {
     try {
         const data = req.body
-        await firestore.collection('users').doc(data.id).set(data)
+        await firestore.collection('users').doc(data.email).set(data)
         res.status(200).send("Save complete")
     } catch (error) {
         res.status(400).send(error.message)
@@ -15,15 +15,23 @@ const addUser = async (req, res) => {
 
 const getUser = async (req, res) => {
     try {
-        const id = req.body.id
-        const user = await firestore.doc('users/' + id).get()
+        const email = req.body.email
+        const user = await firestore.doc('users/' + email).get()
         if (!user.exists) {
             res.status(404).send("no user found")
         } else {
             const u = new User(
-                user.id,
-                user.data().firstName,
-                user.data().lastName
+                user.data().email,
+                user.data().fullName,
+                user.data().image,
+                user.data().age,
+                user.data().gender,
+                user.data().mobile,
+                user.data().telephone,
+                user.data().city,
+                user.data().province,
+                user.data().country,
+                user.data().address
             )
             res.status(200).send(u)
         }
@@ -39,11 +47,19 @@ const getAllUser = async (req, res) => {
         if (users.empty) {
             res.status(404).send("no user found")
         } else {
-            users.forEach(doc => {
+            users.forEach(user => {
                 const u = new User(
-                    doc.data().id,
-                    doc.data().firstName,
-                    doc.data().lastName
+                    user.data().email,
+                    user.data().fullName,
+                    user.data().image,
+                    user.data().age,
+                    user.data().gender,
+                    user.data().mobile,
+                    user.data().telephone,
+                    user.data().city,
+                    user.data().province,
+                    user.data().country,
+                    user.data().address
                 )
                 usersArray.push(u)
             })
@@ -57,7 +73,7 @@ const getAllUser = async (req, res) => {
 const updateUser = async (req, res) => {
     try {
         const data = req.body
-        await firestore.collection('users').doc(data.id).update(data)
+        await firestore.collection('users').doc(data.email).update(data)
         res.status(200).send("Update complete")
     } catch (error) {
         res.status(400).send(error.message)
