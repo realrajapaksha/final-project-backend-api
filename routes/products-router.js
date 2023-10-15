@@ -10,4 +10,6 @@ router.get('/prodcut', getAllProducts)
 router.post('/prodcut', addProduct)
 router.put('/prodcut', updateProduct)
 
-module.exports = router;
+module.exports = {
+    routes: router
+}

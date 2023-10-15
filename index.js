@@ -7,6 +7,7 @@ const config = require('./config')
 
 const userRoutes = require('./routes/user-routes')
 const searchRouter = require('./routes/search-router');
+const productsRouter = require('./routes/products-router');
 
 const app = express()
 
@@ -16,6 +17,7 @@ app.use(bodyParser.json())
 
 app.use('/api', userRoutes.routes)
 app.use('/api', searchRouter)
+app.use('/api', productsRouter.routes)
 
 app.listen(config.port, () => console.log("app listening on localhost" + config.port))
 
