@@ -3,12 +3,12 @@ const { addProduct, getProduct, getAllProducts, getAllOnly, updateProduct } = re
 
 const router = express.Router()
 
-router.get('/prodcut', getProduct)
-router.get('/prodcuts', getAllProducts)
-router.get('/prodcutsonly', getAllOnly)
-router.get('/prodcut', getAllProducts)
-router.post('/prodcut', addProduct)
-router.put('/prodcut', updateProduct)
+router.get('/product', getProduct)
+router.get('/products', getAllProducts)
+router.get('/productsonly', getAllOnly)
+router.get('/product', getAllProducts)
+router.post('/product', addProduct)
+router.put('/product', updateProduct)
 
 module.exports = {
     routes: router
