@@ -6,7 +6,6 @@ const router = express.Router()
 router.get('/product', getProduct)
 router.get('/products', getAllProducts)
 router.get('/productsonly', getAllOnly)
-router.get('/product', getAllProducts)
 router.post('/product', addProduct)
 router.put('/product', updateProduct)
 

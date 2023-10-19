@@ -6,8 +6,13 @@ const User = require('../models/User')
 const addUser = async (req, res) => {
     try {
         const data = req.body
+        var user = await firestore.collection('users').doc(data.email).get();
+        if (user.exists) {
+            res.status(208).send("user already exist")
+            return;
+        }
         await firestore.collection('users').doc(data.email).set(data)
-        res.status(200).send("Save complete")
+        res.status(200).send("save complete")
     } catch (error) {
         res.status(400).send(error.message)
     }
@@ -15,23 +20,23 @@ const addUser = async (req, res) => {
 
 const getUser = async (req, res) => {
     try {
-        const email = req.body.email
+        const email = req.query.email
         const user = await firestore.doc('users/' + email).get()
         if (!user.exists) {
             res.status(404).send("no user found")
         } else {
             const u = new User(
+                user.data().id,
                 user.data().email,
                 user.data().fullName,
                 user.data().image,
                 user.data().age,
                 user.data().gender,
-                user.data().mobile,
-                user.data().telephone,
+                user.data().tele1,
+                user.data().tele2,
                 user.data().city,
-                user.data().province,
+                user.data().address,
                 user.data().country,
-                user.data().address
             )
             res.status(200).send(u)
         }
@@ -73,8 +78,13 @@ const getAllUser = async (req, res) => {
 const updateUser = async (req, res) => {
     try {
         const data = req.body
-        await firestore.collection('users').doc(data.email).update(data)
-        res.status(200).send("Update complete")
+        var user = await firestore.collection('users').doc(data.email).get();
+        if (user.exists) {
+            await firestore.collection('users').doc(data.email).update(data)
+            res.status(200).send("Update complete")
+        } else {
+            res.status(404).send("no user found")
+        }
     } catch (error) {
         res.status(400).send(error.message)
     }
