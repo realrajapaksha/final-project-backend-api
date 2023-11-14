@@ -41,7 +41,7 @@ const getUser = async (req, res) => {
             res.status(200).send(u)
         }
     } catch (error) {
-        res.status(404).send(error.message)
+        res.status(405).send(error.message)
     }
 }
 
