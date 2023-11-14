@@ -37,6 +37,8 @@ const getUser = async (req, res) => {
                 user.data().city,
                 user.data().address,
                 user.data().country,
+                user.data().status,
+                user.data().type,
             )
             res.status(200).send(u)
         }
@@ -54,17 +56,19 @@ const getAllUser = async (req, res) => {
         } else {
             users.forEach(user => {
                 const u = new User(
+                    user.data().id,
                     user.data().email,
                     user.data().fullName,
                     user.data().image,
                     user.data().age,
                     user.data().gender,
-                    user.data().mobile,
-                    user.data().telephone,
+                    user.data().tele1,
+                    user.data().tele2,
                     user.data().city,
-                    user.data().province,
+                    user.data().address,
                     user.data().country,
-                    user.data().address
+                    user.data().status,
+                    user.data().type,
                 )
                 usersArray.push(u)
             })
